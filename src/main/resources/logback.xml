@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Aedes Alert, Support to collect data to combat dengue
+    Copyright (C) 2017 Fundación Anesvad
+      
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+      
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+      
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ -->
+<!DOCTYPE xml>
+
+<configuration>
+   
+	 <property name="LOG_HOME" value="C:/Proyectos/Sapev/Logs" />
+      
+    <contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
+       <resetJUL>true</resetJUL>
+       </contextListener>
+  
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+       <target>System.out</target>
+        <file>${LOG_HOME}/myLogFile.log</file>
+        <append>true</append>
+        <encoder>
+            <pattern>%date %-4relative %level [%file:%line] [%thread] %-5level %logger{35} -  %msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="FILE_DAY" class="ch.qos.logback.core.rolling.RollingFileAppender">
+       <prudent>true</prudent>
+       <append>true</append>
+       <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+             <fileNamePattern>${LOG_HOME}/logFile.%d{yyyy-MM-dd}.log</fileNamePattern>
+             <maxHistory>30</maxHistory>
+       </rollingPolicy>
+       <encoder>
+             <pattern>%date %-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>
+       </encoder>
+       </appender> 
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+       <append>true</append>
+       <encoder>
+             <pattern>%d [%level in %file:%line] - %msg%n</pattern>
+       </encoder>
+       </appender>   
+       
+     <root level="error">
+       <appender-ref ref="FILE" />
+       <appender-ref ref="FILE_DAY" />
+       <appender-ref ref="CONSOLE" />    
+     </root>     
+     
+     
+</configuration>
+

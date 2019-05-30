@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Aedes Alert, Support to collect data to combat dengue
+    Copyright (C) 2017 Fundación Anesvad
+      
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+      
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+      
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ -->
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="AEDES_API" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<class>com.gruposca.sapev.api.connectors.dao.model.Alerts</class>
+		<class>com.gruposca.sapev.api.connectors.dao.model.AreaDescendants</class>
+		<class>com.gruposca.sapev.api.connectors.dao.model.Areas</class>
+		<class>com.gruposca.sapev.api.connectors.dao.model.Febriles</class>
+		<class>com.gruposca.sapev.api.connectors.dao.model.Houses</class>
+		<class>com.gruposca.sapev.api.connectors.dao.model.Inventories</class>
+		<class>com.gruposca.sapev.api.connectors.dao.model.InventorySummaries</class>
+		<class>com.gruposca.sapev.api.connectors.dao.model.Labels</class>
+		<class>com.gruposca.sapev.api.connectors.dao.model.Languages</class>
+		<class>com.gruposca.sapev.api.connectors.dao.model.Larvicides</class>
+		<class>com.gruposca.sapev.api.connectors.dao.model.Modules</class>
+		<class>com.gruposca.sapev.api.connectors.dao.model.Permissions</class>
+		<class>com.gruposca.sapev.api.connectors.dao.model.Persons</class>
+		<class>com.gruposca.sapev.api.connectors.dao.model.Plans</class>
+		<class>com.gruposca.sapev.api.connectors.dao.model.PlansAreas</class>
+		<class>com.gruposca.sapev.api.connectors.dao.model.ProfileAlerts</class>
+		<class>com.gruposca.sapev.api.connectors.dao.model.Profiles</class>
+		<class>com.gruposca.sapev.api.connectors.dao.model.ReportInspections</class>
+		<class>com.gruposca.sapev.api.connectors.dao.model.Reports</class>
+		<class>com.gruposca.sapev.api.connectors.dao.model.Scenes</class>
+		<class>com.gruposca.sapev.api.connectors.dao.model.Schedules</class>
+		<class>com.gruposca.sapev.api.connectors.dao.model.Symptoms</class>
+		<class>com.gruposca.sapev.api.connectors.dao.model.TableElements</class>
+		<class>com.gruposca.sapev.api.connectors.dao.model.TableHeaders</class>
+		<class>com.gruposca.sapev.api.connectors.dao.model.Users</class>
+		<class>com.gruposca.sapev.api.connectors.dao.model.Visits</class>
+		<class>com.gruposca.sapev.api.connectors.dao.model.VisitSummaries</class>
+		<class>com.gruposca.sapev.api.connectors.dao.model.TrapLocations</class>
+		<class>com.gruposca.sapev.api.connectors.dao.model.Traps</class>
+		<class>com.gruposca.sapev.api.connectors.dao.model.TrapData</class>
+		<class>com.gruposca.sapev.api.connectors.dao.model.Inspections</class>
+		<class>com.gruposca.sapev.api.connectors.dao.model.SamplePhases</class>
+		<class>com.gruposca.sapev.api.connectors.dao.model.Samples</class>									    		    
+		    		    
+		    <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <validation-mode>NONE</validation-mode>
+        <properties>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+            <property name="hibernate.show_sql" value="false"/>
+            <property name="hibernate.use_sql_comments" value="false"/>
+            <property name="hibernate.generate_statistics" value="false"/>
+            <property name="hibernate.temp.use_jdbc_metadata_defaults" value="false"/>     
+        </properties>
+	</persistence-unit>
+</persistence>
